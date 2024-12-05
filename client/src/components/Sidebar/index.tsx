@@ -1,7 +1,7 @@
 "use client"
 import { useAppDispatch, useAppSelector } from '@/app/redux';
 import { setIsSidebarCollapsed } from '@/state';
-import { Briefcase, Home, LockIcon, LucideIcon, Search, Settings, User, Users, X } from 'lucide-react';
+import { Briefcase, ChevronDown, ChevronUp, Home, LockIcon, LucideIcon, Search, Settings, User, Users, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -67,6 +67,28 @@ const Sidebar = () => {
                     <SidebarLink icon={User} label="Users" href="/users" />
                     <SidebarLink icon={Users} label="Teams" href="/teams" />
                 </nav>
+                <button
+                    onClick={() => setShowProjects((prev) => !prev)}
+                    className="flex w-full items-center justify-between px-8 py-3 text-gray-500"
+                >
+                    <span className="">Projects</span>
+                    {showProjects ? (
+                        <ChevronUp className="h-5 w-5" />
+                    ) : (
+                        <ChevronDown className="h-5 w-5" />
+                    )}
+                </button>
+                <button
+                    onClick={() => setShowPriority((prev) => !prev)}
+                    className="flex w-full items-center justify-between px-8 py-3 text-gray-500"
+                >
+                    <span className="">Priority</span>
+                    {showPriority ? (
+                        <ChevronUp className="h-5 w-5" />
+                    ) : (
+                        <ChevronDown className="h-5 w-5" />
+                    )}
+                </button>
             </div>
         </div>
     )
