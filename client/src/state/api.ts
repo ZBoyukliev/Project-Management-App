@@ -6,24 +6,41 @@ export interface Project {
     description?: string;
     startDate?: string;
     endDate?: string;
-  }
+}
 
-  export enum Priority {
+export enum Priority {
     Urgent = "Urgent",
     High = "High",
     Medium = "Medium",
     Low = "Low",
     Backlog = "Backlog",
-  }
-  
-  export enum Status {
+}
+
+export enum Status {
     ToDo = "To Do",
     WorkInProgress = "Work In Progress",
     UnderReview = "Under Review",
     Completed = "Completed",
-  }
+}
 
-  export interface Task {
+export interface User {
+    userId?: number;
+    username: string;
+    email: string;
+    profilePictureUrl?: string;
+    cognitoId?: string;
+    teamId?: number;
+}
+
+export interface Attachment {
+    id: number;
+    fileURL: string;
+    fileName: string;
+    taskId: number;
+    uploadedById: number;
+}
+
+export interface Task {
     id: number;
     title: string;
     description?: string;
@@ -36,7 +53,12 @@ export interface Project {
     projectId: number;
     authorUserId?: number;
     assignedUserId?: number;
-  }
+
+    author?: User;
+    assignee?: User;
+    comments?: Comment[];
+    attachments?: Attachment[];
+}
 
 export const api = createApi({
     baseQuery: fetchBaseQuery({
@@ -47,4 +69,4 @@ export const api = createApi({
     endpoints: (build) => ({})
 })
 
-export const {} = api
+export const { } = api
