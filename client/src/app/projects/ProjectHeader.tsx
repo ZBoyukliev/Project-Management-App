@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 type Props = {
     activeTab: string;
@@ -7,6 +7,9 @@ type Props = {
   
 
 const ProjectHeader = ({ activeTab, setActiveTab }: Props) => {
+
+  const [isModalNewProjectOpen, setIsModalNewProjectOpen] = useState(false);
+
   return (
     <div>ProjectHeader</div>
   )
