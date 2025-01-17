@@ -114,11 +114,11 @@ type BoardProps = {
           </div>
         </div>
   
-        {/* {tasks
+        {tasks
           .filter((task) => task.status === status)
           .map((task) => (
             <Task key={task.id} task={task} />
-          ))} */}
+          ))}
       </div>
     );
   };
