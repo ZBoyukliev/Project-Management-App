@@ -176,7 +176,8 @@ type BoardProps = {
       >
         {task.attachments && task.attachments.length > 0 && (
           <Image
-            src={`https://pm-s3-images.s3.us-east-2.amazonaws.com/${task.attachments[0].fileURL}`}
+            // src={`https://pm-s3-images.s3.us-east-2.amazonaws.com/${task.attachments[0].fileURL}`}
+            src={`/{${task.attachments[0].fileURL}}`}
             alt={task.attachments[0].fileName}
             width={400}
             height={200}
@@ -228,7 +229,8 @@ type BoardProps = {
               {task.assignee && (
                 <Image
                   key={task.assignee.userId}
-                  src={`https://pm-s3-images.s3.us-east-2.amazonaws.com/${task.assignee.profilePictureUrl!}`}
+                //   src={`https://pm-s3-images.s3.us-east-2.amazonaws.com/${task.assignee.profilePictureUrl!}`}
+                  src={`/`}
                   alt={task.assignee.username}
                   width={30}
                   height={30}
@@ -238,7 +240,8 @@ type BoardProps = {
               {task.author && (
                 <Image
                   key={task.author.userId}
-                  src={`https://pm-s3-images.s3.us-east-2.amazonaws.com/${task.author.profilePictureUrl!}`}
+                //   src={`https://pm-s3-images.s3.us-east-2.amazonaws.com/${task.author.profilePictureUrl!}`}
+                  src=''
                   alt={task.author.username}
                   width={30}
                   height={30}
