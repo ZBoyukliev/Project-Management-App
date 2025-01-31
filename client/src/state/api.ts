@@ -64,7 +64,7 @@ export interface SearchResults {
     tasks?: Task[];
     projects?: Project[];
     users?: User[];
-  }
+}
 
 export const api = createApi({
     baseQuery: fetchBaseQuery({
@@ -102,14 +102,17 @@ export const api = createApi({
         }),
         updateTaskStatus: build.mutation<Task, { taskId: number; status: string }>({
             query: ({ taskId, status }) => ({
-              url: `tasks/${taskId}/status`,
-              method: "PATCH",
-              body: { status },
+                url: `tasks/${taskId}/status`,
+                method: "PATCH",
+                body: { status },
             }),
             invalidatesTags: (result, error, { taskId }) => [
-              { type: "Tasks", id: taskId },
+                { type: "Tasks", id: taskId },
             ],
-          }),
+        }),
+        search: build.query<SearchResults, string>({
+            query: (query) => `search?query=${query}`,
+        }),
     })
 })
 
