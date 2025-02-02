@@ -1,7 +1,7 @@
 "use client";
 
 import Header from "@/components/Header";
-// import ProjectCard from "@/components/ProjectCard";
+import ProjectCard from "@/components/ProjectCard";
 import TaskCard from "@/components/TaskCard";
 // import UserCard from "@/components/UserCard";
 import { useSearchQuery } from "@/state/api";
@@ -55,9 +55,9 @@ const Search = () => {
             {searchResults.projects && searchResults.projects?.length > 0 && (
               <h2>Projects</h2>
             )}
-            {/* {searchResults.projects?.map((project) => (
+            {searchResults.projects?.map((project) => (
               <ProjectCard key={project.id} project={project} />
-            ))} */}
+            ))}
 
             {searchResults.users && searchResults.users?.length > 0 && (
               <h2>Users</h2>
