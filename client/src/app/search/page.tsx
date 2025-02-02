@@ -3,7 +3,7 @@
 import Header from "@/components/Header";
 import ProjectCard from "@/components/ProjectCard";
 import TaskCard from "@/components/TaskCard";
-// import UserCard from "@/components/UserCard";
+import UserCard from "@/components/UserCard";
 import { useSearchQuery } from "@/state/api";
 import { debounce } from "lodash";
 import React, { useEffect, useState } from "react";
@@ -62,9 +62,9 @@ const Search = () => {
             {searchResults.users && searchResults.users?.length > 0 && (
               <h2>Users</h2>
             )}
-            {/* {searchResults.users?.map((user) => (
+            {searchResults.users?.map((user) => (
               <UserCard key={user.userId} user={user} />
-            ))} */}
+            ))}
           </div>
         )}
       </div>
