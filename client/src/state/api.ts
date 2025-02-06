@@ -71,7 +71,7 @@ export interface Team {
     teamName: string;
     productOwnerUserId?: number;
     projectManagerUserId?: number;
-  }
+}
 
 export const api = createApi({
     baseQuery: fetchBaseQuery({
@@ -120,11 +120,11 @@ export const api = createApi({
         getUsers: build.query<User[], void>({
             query: () => "users",
             providesTags: ["Users"],
-          }),
-          getTeams: build.query<Team[], void>({
+        }),
+        getTeams: build.query<Team[], void>({
             query: () => "teams",
             providesTags: ["Teams"],
-          }),
+        }),
         search: build.query<SearchResults, string>({
             query: (query) => `search?query=${query}`,
         }),
