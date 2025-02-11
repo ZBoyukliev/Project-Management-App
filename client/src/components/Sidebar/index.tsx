@@ -2,7 +2,7 @@
 import { useAppDispatch, useAppSelector } from '@/app/redux';
 import { setIsSidebarCollapsed } from '@/state';
 import { useGetProjectsQuery } from '@/state/api';
-import { Briefcase, ChevronDown, ChevronUp, Home, LockIcon, LucideIcon, Search, Settings, User, Users, X } from 'lucide-react';
+import { AlertCircle, AlertOctagon, AlertTriangle, Briefcase, ChevronDown, ChevronUp, Home, Layers3, LockIcon, LucideIcon, Search, Settings, ShieldAlert, User, Users, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -100,6 +100,31 @@ const Sidebar = () => {
                         <ChevronDown className="h-5 w-5" />
                     )}
                 </button>
+                {showPriority && (
+                    <>
+                        <SidebarLink
+                            icon={AlertCircle}
+                            label="Urgent"
+                            href="/priority/urgent"
+                        />
+                        <SidebarLink
+                            icon={ShieldAlert}
+                            label="High"
+                            href="/priority/high"
+                        />
+                        <SidebarLink
+                            icon={AlertTriangle}
+                            label="Medium"
+                            href="/priority/medium"
+                        />
+                        <SidebarLink icon={AlertOctagon} label="Low" href="/priority/low" />
+                        <SidebarLink
+                            icon={Layers3}
+                            label="Backlog"
+                            href="/priority/backlog"
+                        />
+                    </>
+                )}
             </div>
         </div>
     )
