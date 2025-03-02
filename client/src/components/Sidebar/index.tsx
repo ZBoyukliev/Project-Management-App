@@ -46,7 +46,7 @@ const Sidebar = () => {
                 {/* TEAM  */}
                 <div className="flex items-center gap-5 border-y-[1.5px] border-gray-200 px-8 py-4 dark:border-gray-700">
                     <Image
-                        src="/next.svg"
+                        src="https://my-pm-s3-images.s3.us-east-1.amazonaws.com//next.svg"
                         alt="Logo"
                         width={40}
                         height={40}
